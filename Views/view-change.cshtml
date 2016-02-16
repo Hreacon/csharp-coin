@@ -1,0 +1,41 @@
+@Html.Partial("header.cshtml")
+
+<h1>You are going to recieve @String.Format("{0:c}", @Model.GetChange()) in:</h1>
+
+<ul>
+  @if(Model.GetQuarters() > 0) {
+    <li>@Model.GetQuarters().ToString("N0") Quarter
+    @if(Model.GetQuarters() > 1) {
+      <span>s</span>
+    }
+    </li>
+  }
+  @if(Model.GetDimes() > 0) {
+    <li>@Model.GetDimes().ToString("N0") Dime
+    @if(Model.GetDimes() > 1) {
+      <span>s</span>
+    }
+    </li>
+  }
+  @if(Model.GetNickels() > 0) {
+    <li>@Model.GetNickels().ToString("N0") Nickel
+    @if(Model.GetNickels() > 1) {
+      <span>s</span>
+    }
+    </li>
+  }
+  @if(Model.GetPennies() > 0) {
+    <li>@Model.GetPennies().ToString("N0") Penn
+    @if(Model.GetPennies() > 1) {
+      <span>ies</span>
+    } else {
+      <span>y</span>
+    }
+    </li>
+  }
+
+</ul>
+
+<form action="/" method="get">
+  <input type="submit" name="submit" value="PLAY AGAIN" autofocus>
+</form>

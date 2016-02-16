@@ -60,3 +60,7 @@ input {
 .chessboard .queen {
   background:green;
 }
+
+span {
+  margin-left:-4px;
+}
